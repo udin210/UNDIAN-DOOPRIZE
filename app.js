@@ -105,12 +105,6 @@ startButton.addEventListener('click', () => {
     let counter = 0;
     const interval = setInterval(() => {
         // Menampilkan angka acak sementara sebelum menampilkan pemenang
-        shuffleAudio.currentTime = 0;
-        shuffleAudio.play().then(() => {
-            console.log('Audio shuffle started');
-        }).catch(error => {
-            console.error('Error playing shuffle audio:', error);
-        });
         numberDisplay.textContent = Math.floor(Math.random() * 1e16).toString().padStart(16, '0');
         counter++;
 

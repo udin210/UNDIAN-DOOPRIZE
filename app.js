@@ -105,6 +105,12 @@ startButton.addEventListener('click', () => {
     let counter = 0;
     const interval = setInterval(() => {
         // Menampilkan angka acak sementara sebelum menampilkan pemenang
+        shuffleAudio.currentTime = 0;
+        shuffleAudio.play().then(() => {
+            console.log('Audio shuffle started');
+        }).catch(error => {
+            console.error('Error playing shuffle audio:', error);
+        });
         numberDisplay.textContent = Math.floor(Math.random() * 1e16).toString().padStart(16, '0');
         counter++;
 
@@ -115,13 +121,13 @@ startButton.addEventListener('click', () => {
             displayWinner(winner);
         }
     }, 100); // Setiap 100ms angka berubah
-    setTimeout(() => {
-        shuffleAudio.currentTime = 0;
-        shuffleAudio.play().then(() => {
-            console.log('Audio shuffle started');
-        }).catch(error => {
-            console.error('Error playing shuffle audio:', error);
-        });
-    }, 100);
+    // setTimeout(() => {
+    //     shuffleAudio.currentTime = 0;
+    //     shuffleAudio.play().then(() => {
+    //         console.log('Audio shuffle started');
+    //     }).catch(error => {
+    //         console.error('Error playing shuffle audio:', error);
+    //     });
+    // }, 100);
 });
 

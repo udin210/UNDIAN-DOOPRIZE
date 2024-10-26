@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNDIAN DOOPRIZE</title>
+
+  <style>
+    body {
+      background-image: url('assets/HLN79-DOOPRIZE.jpg');
+      background-size: cover;
+      /* Gambar menutupi seluruh layar */
+      background-position: center;
+      /* Posisikan gambar di tengah */
+      background-repeat: no-repeat;
+      /* Jangan ulangi gambar */
+      background-attachment: fixed;
+      /* Gambar tetap saat di-scroll */
+      display: flex;
+      /* Menggunakan Flexbox */
+      flex-direction: column;
+      /* Susun konten secara vertikal */
+      justify-content: center;
+      /* Pusatkan secara vertikal */
+      align-items: center;
+      /* Pusatkan secara horizontal */
+      min-height: 100vh;
+      /* Tinggi minimal 100% dari layar */
+      margin: 0;
+      /* Hapus margin default */
+      text-align: center;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    #number-display {
+      font-size: 80px;
+      margin: 20px auto;
+      background-color: rgba(255, 255, 255, 0.8);
+      /* Background putih dengan transparansi */
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      width: 1000px;
+      max-width: 90%;
+      /* Supaya responsif di layar kecil */
+    }
+
+    #winner-info p {
+      font-size: 40px;
+      margin: 10px 0;
+      opacity: 0;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      width: 1000px;
+    }
+
+    #start-btn {
+      background-color: #f39c12;
+      color: white;
+      font-size: 30px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+      /* Tambahkan jarak antara tombol dan nomor */
+    }
+
+    #start-btn:hover {
+      background-color: #e67e22;
+    }
+
+    #start-btn:active {
+      background-color: #d35400;
+      /* Warna saat tombol ditekan */
+    }
+
+    /* Animasi */
+    .fade-in {
+      animation: fadeIn 2s ease-out forwards;
+    }
+
+    .slide-in {
+      animation: slideIn 1.5s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <audio id="play-sound" src="assets/shuffle-sound.mp3"></audio> -->
+  <!-- <audio id="shuffle-audio" preload="auto">
+    <source src="assets/shuffle-sound.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <audio id="shuffle-audio" src="assets/shuffle-sound.mp3"></audio> -->
+  <audio id="shuffle-audio" src="assets/shuffle-sound.mp3" preload="auto"></audio>
+  <audio id="shuffle-sound" preload="auto">
+    <source src="assets/shuffle-sound.mp3" type="audio/mpeg">
+    <source src="assets/shuffle-sound.mp3" type="audio/wav">
+    Your browser does not support the audio element.
+</audio>
+
+  <div style="padding: 100px 0px 0px 0px;">
+    <h1>PENGUNDIAN DOOPRIZE</h1>
+    <div id="number-display">0000000000000000</div>
+    <button id="start-btn">UNDI</button>
+    <div id="winner-info"></div>
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+
+</html>
